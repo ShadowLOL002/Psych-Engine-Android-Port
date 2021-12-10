@@ -393,6 +393,14 @@ class PlayState extends MusicBeatState
 					stageCurtains.updateHitbox();
 					add(stageCurtains);
 				}
+				
+             case 'medbay': 
+				var medbaybg:BGSprite = new BGSprite('medbay_bg', -750, 70, 1.4, 1.4);
+				add(medbaybg);
+
+             case 'gummybear':
+				var bg:BGSprite = new BGSprite('imposter_bg', -559.45, -632.7);
+				add(bg);
 
 			case 'spooky': //Week 2
 				if(!ClientPrefs.lowQuality) {
@@ -907,6 +915,14 @@ class PlayState extends MusicBeatState
 		scoreTxt.borderSize = 1.25;
 		scoreTxt.visible = !ClientPrefs.hideHud;
 		add(scoreTxt);
+
+        var creditTxt:FlxText = new FlxText(4,healthBarBG.y + 20,0,("Port by Shadow "), 24);
+        creditTxt.scrollFactor.set();
+        creditTxt.setFormat("VCR OSD Mono", 24, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+        creditTxt.borderColor = FlxColor.BLACK;
+        creditTxt.borderSize = 3;
+        creditTxt.borderStyle = FlxTextBorderStyle.OUTLINE;
+        add(creditTxt);
 
 		botplayTxt = new FlxText(400, timeBarBG.y + 55, FlxG.width - 800, "BOTPLAY", 32);
 		botplayTxt.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
